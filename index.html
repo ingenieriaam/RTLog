@@ -5,12 +5,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- TITULO DE LA PRESENTACIÓN -->
-		<title>Control virtual de instrumentos de medicion - UTNBA</title>
+		<title>RTLog - UTNBA</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<!-- TEMA ELEGIDO DE FONDO -->
 		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- PIE DE PAGINA -->
+		<div class="footer" style="display: block; position: absolute; bottom: 16px; left: 0%; z-index: 20;">
+			<a class="footer"><span style="color: #33cccc;"><span style="font-size:1.4em">&nbsp;&nbsp;&nbsp;&nbsp;UTN.BA - Laboratorio de Nanoelectronica</span></a>
+		</div>
+		<div class="footer" style="display: block; position: absolute; bottom: 16px; left: 85%; z-index: 20;">
+			<a class="footer"><span style="color: #33cccc;"><span style="font-size:1.4em">RTLog R&amp;D Team</span></a>
+		</div>
+
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -29,78 +38,58 @@
 		<div class="reveal">		
 			<div class="slides">			
 
-<!-- INICIO DE LA PRESENTACIÓN -->			
-	<section data-background="img/fondome2.svg">
-		<div style="position: absolute; width: 70%; height:500% ; left: -10%;top:1000%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(1, 1, 1, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">		
-		<h2>Control virtual de instrumentos de medicion
-		<img src="https://sceu.frba.utn.edu.ar/nochedelosmuseos/logoutnba.png" alt="" width="320" height="116" /> </h2>
-		</div>
-	</section>
+<!-- INICIO DE LA PRESENTACIÓN -->		
+<section>	
+<div class="sl-block" data-block-type="text" style="width: 958px; left: 2px; top: 20px; height: auto;" data-block-id="4d7ddcf0b106248f24f8a4d133bb2e27">
+    <div class="sl-block-style" style="z-index: 11; transform: rotate(360deg);">
+        <div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+        	<h1 style="text-align: left;"><span style="color: #ff0000;">RTLog</span></h1>
+            <h2 style="text-align:left">
+                <span style="font-size:0.45em">hardware description language for synchronous and asynchronous circuits</span>
+            </h2>
+        </div>
+    </div>
+</div>
+<div class="sl-block" data-block-type="image" data-block-id="34eab9cc054e46783cad0ceeec6d423e" style="min-width: 4px; min-height: 4px; width: 563px; height: 204px; left: 397px; top: 426px;">
+    <div class="sl-block-content" style="z-index: 13;">
+        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/1062536/images/6462875/utn.png" style="" data-natural-width="2500" data-natural-height="906"/>
+    </div>
+</div>
+</section>
 
 	<section data-markdown
-			 data-background="fondo.png"
 		     data-separator="^hhhh"
 		     data-separator-vertical="^vvvv"
 		     data-separator-notes="^Note:"
 		     data-charset="iso-8859-15">
 
 <!-- ........................................ -->
-### Sistema de control virtual de instrumentos
 
  ### Agenda:
 
 ---------------
 
-- Objetivos
-- ¿Por qué python?
-- Comandos, formatos y usos
-- Especificaciones Visa
-- Primeros pasos y Primeros problemas
-- Trabajo en proceso
+- RTLog Language.
+- The RTLog compiler.
+- RTLog applied to asynchronous circuits.
 
-
-
-
-hhhh
-
-### Objetivos ###
-
----------------
-
-Control de mediante software desarrollado en lenguaje de alto nivel
-
-|||
-|--------|----------|
-|[![mat](https://research-it.berkeley.edu/sites/default/files/styles/large/public/matlab-logo.jpg?itok=Zse5goL-)](https://la.mathworks.com/products/matlab.html)| [![py](https://conceptosclaros.com/wp-content/uploads/2017/01/herramientas-de-analisis-de-datos-python.png)](https://www.python.org/) |	
-
-vvvv
-
-### Equipos a controlar ###
-(en principio)
-
-
-| [Equipo]() | [Modelo]() |
-| ------- | --------- |
-| Analizador| Agilent N9320A |
-| Generador| Agilent N9310A |
-| Medidor de potencia | Anritsu ML2487B con sensor MA2472D  |
 </section>
 
 <!-- ........................................ -->
 
 
 <section>
-<h2>¿Por qué <img src="https://www.python.org/static/img/python-logo.png" alt="" width="270" height="70" /> ?</h2>
-<p class="fragment fade-right">Lenguaje interpretado,</p>
-<p class="fragment fade-right">Colaborativo,</p>
-<p class="fragment fade-right">Posee gran disponibilidad de librerias,</p>
-<p class="fragment fade-right">Permite desarrollos y pruebas rapidas,</p>
-<p class="fragment fade-right">Es gratuito.</p>
-<p><span class="fragment">Ademas es simple</span> <span class="fragment">con gran soporte y</span> <span class="fragment"style="text-apgn: center; font-size: 3em; text-apgn: center;"><span class="fragment highlight-red">Portable.</span></p>
-
+<p style="text-align: left;"><span style="font-size:1.5em"><span style="color: #33cccc;">What is this language?</span></p>
+<hr />
+<p style="text-align: left;">&nbsp;</p>
+<p class="fragment fade-right">- It's a Hardware Description Language.</p>
+<p class="fragment fade-right">- It's simpler than Verilog or VHDL in the sense syntax doesn't have overhead clauses.</p>
+<p class="fragment fade-right">- Is pure RTL, doesn't consider behavorial constructions.</p>
+<p class="fragment fade-right">- It can describe some kind of async circuits easily.</p>
 </section>
 
 <!-- ........................................ -->
+
 
 <section data-markdown
 	     data-separator="^hhhh"
@@ -109,276 +98,105 @@ vvvv
 	     data-charset="iso-8859-15">
 
 
-### Comandos, formatos y usos ###
+| How to declare i/o ports | |
+|---------------|---------------|
+|![code1](img/ioport.png)|![circ1](img/ports_circuit.svg)|
+
+vvvv
+
+## Simple logic
 
 ---------------
+![code2](img/simple.png)
 
-Comandos IEEE 488.2
-```py
-*CLS 
-*ESE 
-*ESR? 
-*IDN? 
-*OPC
-*RST
-*SRE
-*STB?
-*TRG
-*TST?
-*WAI
-```
+
 vvvv
 
-Tipos:
+## Some flip-flops
 
 ---------------
-
-- Read
-- Write
-- Query
-
-Ejemplos: 
-
-- *CLS limpia los registros de eventos, es tipo WRITE
-- IDN? consulta la identificación del equipo, es tipo QUERY
- ```py
->>> print(inst.query("*IDN?"))
->>> Rigol Technologies,DSA815,DSA8A194601374,00.01.18.00.02
->>> # modelo, número de serie, versión de software
- ```
+![code3](img/ff.png)
 
 vvvv
 
-### Comandos propios:
+## Selection
 
---------------------
-mayor complejidad
-
-```py
-[:SENSe]:ACPower:BANDwidth:INTegration <freq>
-[:SENSe]:ACPower:BANDwidth:INTegration?
-# subsystem | función | opciones de set y consulta | parametros
-```
-Admite ser del tipo write o query.
+---------------
+![code4](img/sel1.png)
 
 vvvv
 
-Ejemplo:
+## Selection
 
- ```py
->>> # set del bandwidth del canal principal en 1 MHz.
->>> inst.write(":SENSe:ACPower:BANDwidth:INTegration 1000000");
->>> # la consulta retornará 1000000.
->>> print(inst.query(":SENSe:ACPower:BANDwidth:INTegration?"))
->>> 1000000
- ```
+---------------
+![code4](img/sel2.png)
 
 hhhh
 
-### Especificaciones Visa
+### How the compiler works?
 
 --------------------
 
-[Virtual Instrument Software Architecture.]()
-Definidas a mediados de los 90 por parte de Agilent y National Instruments, buscaba unificar los protocolos de comunicación a traves de los distintos conexionados (GPIB, RS232, USB, Ethernet). VISA es un estándar de configuración, programación y solución a problemas comunes. Hoy en día, la mayoría de los fabricantes facilitan librerías VISA de forma gratuita y las mismas están soportadas en distintos lenguajes de programación.
+![compile](img/compile.png)
 
 vvvv
 
-Libreria para Python:
-[PyVisa](https://pyvisa.readthedocs.io/en/latest/) 
+### What about asynchronous circuits?
 
-Algunas de las funciones principales:
- ```py
->>> visa.ResourceManager();
->>> list_resources();
->>> inst.write("cmd");
->>> inst.read("cmd");
->>> inst.query("cmd");
->>> inst.read_bytes(n)
->>> inst.close()
- ```
-</section>
+We work with the 4 phases protocol as handshake between latches.
 
-<!-- ........................................ -->
-
-<section data-background="img/pensar.svg"
-		 data-transition="none"> 
-	<h2 class="fragment fade-right">Primeros pasos</h2>
-	<h2 class="fragment fade-right">...</h2>
-</section>
-	<section data-background="img/pensar2.svg" data-transition="none">
-	<h2>Primeros pasos</h2>
-	<h2>... Primeros problemas</h2>
-</section>
-
-<!-- ........................................ -->
-<section data-markdown
-	     data-separator="^hhhh"
-	     data-separator-vertical="^vvvv"
-	     data-separator-notes="^Note:"
-	     data-charset="iso-8859-15">
-
-## Primer intento
-|||
-|-|-|
-|Analizador de especto **Agilent N9320A**|[![Agilent N9320A](img/9320AN.png)](https://www.keysight.com/en/pd-817002-pn-N9320A/rf-spectrum-analyzer-9-khz-3-ghz?cc=US&lc=eng)|
+![async](img/async.svg)
 
 vvvv
 
-## Agilent N9320A
+### An additional step in the compiler
 
------------------
+--------------------
 
-|[Prueba 1]()|[Resultado]()|[Conclusión]()|
-|-|-|-|
-|conexión Ethernet|No hay comunicación|Leer manual|
-|||![arrow](http://rochestercocktailrevival.com/assets/chopped/arrow_right_red.png)|
-
-</section>
-
-<!-- ........................................ -->
-
-<section data-background-iframe="https://literature.cdn.keysight.com/litweb/pdf/N9320-90001.pdf?id=1460375" data-background-interactive>
-	<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,95), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(10, 10, 10, 0.9); color: #aaf; font-size: 20px; text-align: center;">
-		<h2>Guia de Usuario</h2>
-		<p>En busca de respuestas</p>
-	</div>
-</section>
-
-<!-- ........................................ -->
-
-<section data-markdown
-	     data-separator="^hhhh"
-	     data-separator-vertical="^vvvv"
-	     data-separator-notes="^Note:"
-	     data-charset="iso-8859-15">
-|[Prueba 2]()|[Resultado]()|[Conclusión]()|
-|-|-|-|
-|Conexión USB|Solo permite seteos, no contesta query|Algo anda mal|
-
-vvvv
-
-|[Prueba 3]()|[Resultado]()|[Conclusión]()|
-|-|-|-|
-|Conexión USB con librerias propietarias|Funciona de forma erratica y en ocaciones no establece la conexión|Pensar en usar otro analizador|
-
-vvvv
-
-
-
-|[Prueba 4]()|[Resultado]()|[Conclusión]()|
-|-|-|-|
-|Conexión USB y ethernet en Rigol DSA815|Funciona todo lo que probamos|Usaremos este equipo ![dsa](img/dsa815.jpg)|
+- Our compiler first generates a graph representing a sync circuit.
+- In order to build an async circuit the previous graph is modified.
 
 hhhh
 
-|||
-|-|-|
-|Generador de señales **Agilent N9310A**|[![Agilent N9320A](img/generator.png)](img/generator.png)|
+## Transforming sync graph to async
 
---------------
+--------------------
 
-vvvv
+We can summarize this task in these steps
 
-## Agilent N9310A ## 
-
------------------
-|[Pruebas]()|[Resultados]()|[Conclusión]()|
-|-|-|-|
-|Conexión Ethernet|No hay port|Conexión USB|
-|Conexión USB|Comunicación errática|[**Evaluar el uso de otro generador**]()|
-|Seteos básicos|Eventualmente se configura como pedimos|Aún falta dedicarle más tiempo|
+- Find all flip-flop in the circuits.
+- Replace the flip-flops by latches.
+- For each latch we add a linear ( latch ) controller.
+- Find all register-to-register paths.
+- Connect request and acknowledges signals each other.
+- Add input and output handshake ports.
+- Connect this ports to the corresponding latches.
 
 hhhh
 
-|||
-|-|-|
-|Medidor de potencia **Anritsu ML2487B con sensor MA2472D**|[![Agilent N9320A](https://www.used-line.com/picturesauto/352/11481352.jpg)](img/anritsu.png)|
+### Multiple paths converge to a latch
 
---------------
+----------------------------
 
-vvvv
-
-## Anritsu ML2487B ## 
-
------------------
-
-|[Prueba 1]()|[Resultados]()|[Conclusión]()|
-|-|-|-|
-| Conexión Ethernet | Se debe conocer la IP | Usar IP fija o verla en la configuración del instrumento |
+A request to the latch only should be issued only when all paths do. To achieve this behaviour we use a join controller. Probably we have to build a join controller tree to take into account multiple paths.
 
 vvvv
 
-|[Prueba 2]()|[Resultados]()|[Conclusión]()|
-|-|-|-|
-|Utilización de pyVisa | No funcionó | Buscar alternativa |
+### Multiple paths converge to a latch
 
-vvvv
+----------------------------
 
-|[Prueba 3]()|[Resultados]()|[Conclusión]()|
-|-|-|-|
-|Página web hosteada en el instrumento| Interfaz poco práctica | Comunicarse con la web de forma programática |
+![compile](img/multi.png)
 
-vvvv
+hhhh
 
-## Conclusión
--------------
-Se utilizó una solución programática para interactuar con el sitio web.
+### Constraints
 
-## python + [cURL](https://curl.haxx.se/)
-
+--------------------
 
 </section>
 
-<!-- ........................................ -->
 
-<section data-markdown
-		 data-background="img/work.svg"
-	     data-separator="^hhhh"
-	     data-separator-vertical="^vvvv"
-	     data-separator-notes="^Note:"
-	     data-charset="iso-8859-15">
-
-## Proximamente ...
-
-</section>
-
-<!-- ........................................ -->
-
-<section data-markdown
-	     data-separator="^hhhh"
-	     data-separator-vertical="^vvvv"
-	     data-separator-notes="^Note:"
-	     data-charset="iso-8859-15">
-
-## [Desafíos]() 
-
------------------------
-
-- Mayor conocimiento del instrumental
-- Conocer el correcto modo de manipulación
-- Adaptar los comandos a un formato más "amigable"
-- Verificar el funcionamiento de los códigos generados 
-
-vvvv
-
-## [Dificultades]() 
-
------------------------
-
-- Disponibilidad de tiempo de desarrollo
-- Parte del instrumental no está siempre a disposición
-- Pedir en préstamo el instrumental es riesgoso 
-- Numerosos sets de comandos (aprox 300 por instrumento)
-
- </section>
-
-<section data-background="img/jupyter.gif">
-	<div style="position: absolute; width: 50%; height:50%top:10%;left:60%; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(60, 60, 60, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">		
-	<h1>Manos a la obra
-	<img src="img/python_logo.png"/></h1>
-	</div>
-</section>
 
 <!-- ........................................ -->
 
