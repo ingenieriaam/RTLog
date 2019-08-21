@@ -1,4 +1,4 @@
-[![UTNBA](https://actividades.frba.utn.edu.ar/imagenes/logo-con-margenes.jpg)][UTN-BA]
+![UTNBA](https://actividades.frba.utn.edu.ar/imagenes/logo-con-margenes.jpg)
 
 # Presentación de lenguaje RTLog
 
