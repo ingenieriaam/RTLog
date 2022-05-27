@@ -1,12 +1,8 @@
+![UTNBA](https://actividades.frba.utn.edu.ar/imagenes/logo-con-margenes.jpg)
+
 # Presentación de lenguaje RTLog
-___
 
-## reveal.js [![Build Status](https://travis-ci.org/hakimel/reveal.js.svg?branch=master)](https://travis-ci.org/hakimel/reveal.js) <a href="https://slides.com?ref=github"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
+> Sintesis unificada de circuitos digitales sincronicos y asincronicos
 
-A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://revealjs.com/).
+- [Presentación](https://ingenieriaam.github.io/RTLog/)
 
-## License
-
-MIT licensed
-
-Copyright (C) 2019 Hakim El Hattab, http://hakim.se
